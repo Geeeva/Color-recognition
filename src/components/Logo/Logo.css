@@ -1,0 +1,31 @@
+#Logo-wrapper {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	overflow: hidden;
+}
+
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+	
+	#Logo-wrapper {
+		position: static;
+		display: block;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+}
+
+/*** Start of phone styles ***/
+@media screen and (max-width: 479px) {
+
+	#Logo-wrapper {
+		margin-bottom: 20px;
+	}
+}
