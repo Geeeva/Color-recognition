@@ -1,12 +1,13 @@
-{ "homepage": "https://geeeva.github.io/Color-recognition",
-  "name": "color-recognition",
+{
+  "homepage": "http://Geeeva.github.io/Color-recognition",
+  "name": "color-recognition-depl",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "clarifai": "^2.8.1",
     "gsap": "^2.0.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },
   "scripts": {
