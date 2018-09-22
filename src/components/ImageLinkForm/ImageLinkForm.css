@@ -69,6 +69,8 @@ svg {
 	width: 250px;
 	background-color: #fff;
 	color: #000;
+	font-family: MontserratRegular;
+	font-size: 16px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	transition: width .6s ease-in-out, background-color .3s ease-in-out;
@@ -83,17 +85,21 @@ svg {
 
 .ImageLinkForm input::-webkit-input-placeholder {
   	color: #000; 
+  	font-family: MontserratRegular;
 }
 
 .ImageLinkForm input:-moz-placeholder { /* Firefox 18- */
 	color: #000; 
+	font-family: MontserratRegular;
 }
 
 .ImageLinkForm input::-moz-placeholder {  /* Firefox 19+ */
 	color: #000; 
+	font-family: MontserratRegular;
 }
 .ImageLinkForm input:-ms-input-placeholder {
-	colocolor: #000;
+	color: #000;
+	font-family: MontserratRegular;
 }
 
 /*Placeholder:focus*/

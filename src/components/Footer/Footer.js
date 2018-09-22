@@ -18,8 +18,8 @@ const footer = (props) => {
                 <svg id="footer-bg-sm" viewBox="-0.3 -302 1281.3 504">
                     <path fill={props.footerBgColor} style={{transition: "fill .3s ease-in-out"}} d="M-0.3,202H1283v-401.6C974.3-390.8,431-241.6-0.3-150.2V202z"/>
                 </svg>
-                <svg id="footer-bg-xs" viewBox="0 -56 600 356">
-                    <path fill={props.footerBgColor} style={{transition: "fill .3s ease-in-out"}}d="M-0.5,300h600.9V11.2C441-101.6,202-47.3,0,18.5L-0.5,300z"/>
+                <svg id="footer-bg-xs" viewBox="86.4 -3 427.2 181">
+                    <path fill={props.footerBgColor} style={{transition: "fill .3s ease-in-out"}} d="M86.4,178h427.2V31.5C400.2-25.7,230.3,1.8,86.7,35.2L86.4,178z"/>
                 </svg>
                 <div className="social-footer">
                     <div className="social">

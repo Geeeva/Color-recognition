@@ -19,7 +19,9 @@ class App extends Component {
             tooltipVisible: false,
             colorRecAppreance: false,
             colors: [],
-            footerBgColor: '#BABABA' 
+            footerBgColor: '#BABABA',
+            colorArray: ['#A80F67', '#75448C', '#571675', '#BABABA', '#787878', '#DB81B5'],
+            cCounter: 1
         }
     }
 
@@ -40,7 +42,7 @@ class App extends Component {
        this.setState({colors: hexaColors});
     }
 
-    /*validate_is_image = (url, callback, errorcallback) => {
+    validate_is_image = (url, callback, errorcallback) => {
         const img = new Image();
 
         if (typeof(errorcallback) === "function") {
@@ -56,7 +58,7 @@ class App extends Component {
         }
 
         img.src = url;
-    }*/
+    }
 
     onSubmitHandler = () => {
         app.models
@@ -71,18 +73,20 @@ class App extends Component {
             });
         }
 
-        //let url = this.state.imageUrl;
+        let url = this.state.imageUrl;
 
-        /*this.validate_is_image(url, 
-                function(){ 
-                    this.setState({tooltipVisible: false})
-            }, function(){ 
-                    this.setState({tooltipVisible: true})
-        });*/
+        this.validate_is_image(url, 
+                () =>
+                   { this.setState({tooltipVisible: false});
+                    console.log("false");}
+            , () =>
+                   { this.setState({tooltipVisible: true});
+                    console.log("true");}
+        );
     }
 
     footerBgHandler = () => {
-        if(this.state.footerBgColor === "#BABABA") {
+        /*if(this.state.footerBgColor === "#BABABA") {
             this.setState({
                footerBgColor: "#787878"
             })
@@ -90,6 +94,16 @@ class App extends Component {
             this.setState({
                footerBgColor: "#BABABA"
             })
+        }*/
+        if(this.state.cCounter < this.state.colorArray.length){
+            this.setState({
+               footerBgColor: this.state.colorArray[this.state.cCounter],
+               cCounter: this.state.cCounter + 1
+            });
+        } else {
+            this.setState({
+                cCounter: 1
+            });
         }
     }
 

@@ -1,6 +1,6 @@
 .colorRecAppreance-wrapper {
 	position: relative;
-	top: -230px;
+	top: -160px;
 	min-height: 300px;
 	max-width: 600px;
 	transition: transform .2s ease-in-out;
@@ -41,8 +41,8 @@
 }
 
 .Picture {
-    width: 400px;
-	height: 400px;
+    width: 380px;
+	height: 380px;
     background-color: #CFD8DC;
   	border-radius: 50%;
 	overflow: hidden;

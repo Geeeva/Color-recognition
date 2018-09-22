@@ -245,7 +245,8 @@ figure a {
 @media screen and (max-width: 479px) {
 
     .footer-wrapper {
-        margin-top: 50px;
+        //margin-top: 50px;
+        margin-bottom: -50px;
     }
 
     #footer-bg {
