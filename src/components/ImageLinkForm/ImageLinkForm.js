@@ -2,6 +2,7 @@ import React from 'react';
 import './ImageLinkForm.css';
 
 const imageLinkForm = (props) => {
+	
 	return (
 		<div className="ImageLinkForm">
 			<h1>
@@ -25,12 +26,12 @@ const imageLinkForm = (props) => {
                 </svg>
 			</h1>
 			<h3>
-				{"First upload the image, then hit detect, and it will show you the dominant colors of uploaded pic"}
+				{'First upload the image, then hit detect, and it will show you the dominant colors of uploaded pic'}
 			</h3>
-			<div className="Notification">
+			<div className="notification">
 				<span 
 					className={"tooltiptext" + (props.tooltipVisible === true ?
-				 	' visible' : '')}>
+				 	' visible' : '')}>{'Pls. enter a valid URL with an image'}
 				</span>
 			</div>
 			<div className="center">

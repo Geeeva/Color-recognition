@@ -11,8 +11,10 @@ const app = new Clarifai.App({
 });
 
 class App extends Component {
+
     constructor() {
         super();
+
         this.state = {
             input: '',
             imageUrl: '',
@@ -26,10 +28,13 @@ class App extends Component {
     }
 
     onInputChangeHandler = (event) => {
-        this.setState({input: event.target.value})
+        this.setState({input: event.target.value});
 
-        if(event.target.value === "") {
-            this.setState({colorRecAppreance: false})
+        if(event.target.value === '') {
+            this.setState({
+                colorRecAppreance: false,
+                tooltipVisible: false
+            })
         }
     }
 
@@ -39,49 +44,28 @@ class App extends Component {
             return color.raw_hex;
        });
 
-       this.setState({colors: hexaColors});
-    }
+       this.setState({
+            colors: hexaColors,
+            tooltipVisible: false,
+            colorRecAppreance: true
 
-    validate_is_image = (url, callback, errorcallback) => {
-        const img = new Image();
-
-        if (typeof(errorcallback) === "function") {
-            img.onerror = () => { errorcallback(); }
-        } else {
-            img.onerror = () => { return false; }
-        }
-
-        if (typeof(callback) === "function") {
-            img.onload = () => { callback(); }
-        } else {
-            img.onload = () => { return true; }
-        }
-
-        img.src = url;
+        });
     }
 
     onSubmitHandler = () => {
-        app.models
-        .predict(Clarifai.COLOR_MODEL, this.state.input)
-        .then(response => this.displayColors(response))
-        .catch(err => console.log(err));
-
-        if(this.state.input !== "") {
+        if(this.state.input !== '') {
             this.setState({
                 imageUrl: this.state.input,
-                colorRecAppreance: true
+                tooltipVisible: true,
+                colorRecAppreance: false
             });
         }
 
-        let url = this.state.imageUrl;
-
-        this.validate_is_image(url, 
-                () =>
-                   { this.setState({tooltipVisible: false});
-                    console.log("false");}
-            , () =>
-                   { this.setState({tooltipVisible: true});
-                    console.log("true");}
+        app.models
+        .predict(Clarifai.COLOR_MODEL, this.state.input)
+        .then(response => {console.log(response); this.displayColors(response)})
+        .catch(err => /*console.log(err)*/
+            this.setState({tooltipVisible: true})
         );
     }
 
@@ -108,6 +92,7 @@ class App extends Component {
     }
 
     render() {
+        console.log("Display tooltip " + this.state.tooltipVisible);
         return (
             <div className="App">
                 <div className="container-fluid">

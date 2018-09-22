@@ -30,6 +30,10 @@
 	display: inline-block;
 }
 
+.invisible {
+	display: none;
+}
+
 .visible-scale {
 	transform: scale(1)!important;
 	transition: transform .6s ease-in-out;
@@ -61,11 +65,11 @@
 
 .Picture img {
   	transition: transform .4s ease-in-out;
-  	transform: scale(1.1);
+  	transform: scale(1);
 }
 
 .Picture:hover img {
-	transform: scale(1.2);
+	transform: scale(1.1);
 	cursor: pointer;
 }
 
@@ -114,12 +118,12 @@
 	}
 
 	.colorRecAppreance-wrapper {
-		top: -75px;
+		top: -50px;
 	}
 
     .Picture {
-    	max-width: 150px;
-    	max-height: 150px;
+    	max-width: 190px;
+    	max-height: 190px;
     }
 
     #petal-flipped #petal-pic {
@@ -128,7 +132,7 @@
 
     .colors-wrapper {
     	height: 250px;
-    	left: 70px;
-    	top: 220%;
+    	left: 100px;
+    	top: 195%;
     }
 }

@@ -82,6 +82,7 @@ figure a {
  	fill: #000;
  	transform: scale(1);
 	animation: move_halo .2s cubic-bezier(0.7,0,0.9,1) forwards;
+    -webkit-animation: move_halo .2s cubic-bezier(0.7,0,0.9,1) forwards;
 }
 
 
@@ -129,12 +130,12 @@ figure a {
     cursor: pointer;
     height: 87px;
     width: 87px;
-    transform: scale(0.9);
+    transform: scale(0.8);
     transition: transform 0.6s ease-in-out;
 }
 
 #petal-right:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .anim-shape-petal {
@@ -245,8 +246,7 @@ figure a {
 @media screen and (max-width: 479px) {
 
     .footer-wrapper {
-        //margin-top: 50px;
-        margin-bottom: -50px;
+        margin-top: 150px;
     }
 
     #footer-bg {
@@ -270,11 +270,11 @@ figure a {
     }
 
     .social-footer .social .intro {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .email a {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     #petal-right-wrraper {

@@ -55,7 +55,7 @@ svg {
 	font-family: CourierNew,  monospace;
 	font-size: 19px;
 	color: #000;
-	margin-bottom: 100px;
+	margin-bottom: 30px;
 }
 
 .ImageLinkForm input {
@@ -64,7 +64,7 @@ svg {
 	border-radius: 50px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	padding-left: 20px;
 	width: 250px;
 	background-color: #fff;
@@ -166,38 +166,46 @@ svg {
 	color: #000;
 }
 
-.Notification .tooltiptext {
+.notification {
+	position: relative;
+	display: block;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.notification .tooltiptext {
 	visibility: hidden;
-    width: 100%;
-    background-color: #000;
+    width: 300px;
+    background-color: #571675;
     color: #fff;
+    font-family: MontserratRegular;
+    font-size: 15px;
     text-align: center;
     border-radius: 8px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: -50px;
-    left: 0%;
+    padding: 5px 6px;
+    margin-bottom: 20px;
     opacity: 0;
-    font-size: 18px;
     -webkit-transition: opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
     transition: opacity .3s ease-in-out, transform .3s ease-in-out;
 }
 
-.Notification .tooltiptext::after {
+.notification .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
+    border-style: solid;
+    border-color: #571675 transparent  transparent  transparent ;
 }
 
-.Notification .visible {
+.notification .visible {
 	visibility: visible;
     opacity: 1;
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
 }
 
 /*** Start of medium tablet styles ***/
@@ -246,17 +254,24 @@ svg {
 	.ImageLinkForm h3 {
 		display: block;
 		width: 85%;
-    	font-size: 16px;
-    	margin-bottom: 20px;
+    	font-size: 17px;
+    	margin-bottom: 15px;
     	margin-left: auto;
     	margin-right: auto;
+    }
+
+    .notification .tooltiptext {
+    	font-size: 13px;
+    	width: 250px;
+    	margin-bottom: 10px;
     }
 
 	.ImageLinkForm input {
 		width: 180px;
 		margin-bottom: 15px;
-		padding-bottom: 5px;
 		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 15px;
 	}
 
     .ImageLinkForm .detect {
