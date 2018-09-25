@@ -20,7 +20,7 @@
     -webkit-animation: moving-panel 1.1s infinite alternate;
     animation: moving-panel 1.1s infinite alternate; 
 }
-  .colortext .anim-shape:nth-child(1) {
+  /*.colortext .anim-shape:nth-child(1) {
     fill: #A80F67; }
   .colortext .anim-shape:nth-child(2) {
     fill: #75448C; }
@@ -31,7 +31,7 @@
   .colortext .anim-shape:nth-child(5) {
     fill: #787878; }
   .colortext .anim-shape:nth-child(6) {
-    fill: #DB81B5; }
+    fill: #DB81B5; }*/
 
 @-webkit-keyframes moving-panel {
   100% {
@@ -73,11 +73,11 @@ svg {
 	font-size: 16px;
 	padding-top: 8px;
 	padding-bottom: 8px;
-	transition: width .6s ease-in-out, background-color .3s ease-in-out;
+	transition: width .3s ease-in-out, background-color .3s ease-in-out;
 }
 
 .ImageLinkForm input:focus {
-	width: 100%;
+	width: 70%;
 	background-color: #fff;
 }
 
@@ -177,7 +177,7 @@ svg {
 .notification .tooltiptext {
 	visibility: hidden;
     width: 300px;
-    background-color: #571675;
+    background-color: #000;
     color: #fff;
     font-family: MontserratRegular;
     font-size: 15px;
@@ -198,7 +198,7 @@ svg {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #571675 transparent  transparent  transparent ;
+    border-color: #000 transparent  transparent  transparent ;
 }
 
 .notification .visible {
@@ -272,6 +272,10 @@ svg {
 		padding-top: 5px;
 		padding-bottom: 5px;
 		font-size: 15px;
+	}
+
+	.ImageLinkForm input:focus {
+		width: 300px;
 	}
 
     .ImageLinkForm .detect {

@@ -9,10 +9,14 @@
 
 #footer-bg {
 	display: block;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #footer-bg-xl {
     display: none;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 #footer-bg-md {
@@ -36,9 +40,9 @@
 }
 
 .social-footer .social .intro {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
-    font-family: MontserratRegular;
+    font-family: CourierNew;
     color: #1e151e;
     padding-left: 15px;
     padding-right: 15px;
@@ -59,7 +63,6 @@ figure {
 
 figure a {
     text-decoration: none;
-    padding-left: 10px;
 }
 
 .frame {
@@ -74,6 +77,13 @@ figure a {
 	overflow: hidden;
 }
 
+#slash {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-bottom: 5px; 
+}
+
 #github .circle, #linkedin .circle {
 	fill: #CFD8DC;
 }
@@ -81,12 +91,11 @@ figure a {
 #github:hover .circle-bg, #linkedin:hover .circle-bg {
  	fill: #000;
  	transform: scale(1);
-	animation: move_halo .2s cubic-bezier(0.7,0,0.9,1) forwards;
-    -webkit-animation: move_halo .2s cubic-bezier(0.7,0,0.9,1) forwards;
+	animation: toLeftMove .2s cubic-bezier(0.7,0,0.9,1) forwards;
+    -webkit-animation: toLeftMove .2s cubic-bezier(0.7,0,0.9,1) forwards;
 }
 
-
-@keyframes move_halo {
+@-webkit-keyframes toLeftMove {
     0% {
         transform: translate(200px, 0px);
     }
@@ -95,7 +104,79 @@ figure a {
     }
 }
 
-#github .octocat, #linkedin .linkedin-sign  {
+@keyframes toLeftMove {
+    0% {
+        transform: translate(200px, 0px);
+    }
+    100% {
+        transform: translate(-200px, 0px), scale(3);
+    }
+}
+
+.brightGrey {
+    fill: #BABABA;
+    transform: scale(1.2);
+    animation: toLeftMoveBrightGrey.4s cubic-bezier(0.7,0,0.9,1) forwards;
+    -webkit-animation: toLeftMoveBrightGrey .4s cubic-bezier(0.7,0,0.9,1) forwards;
+}
+
+@-webkit-keyframes toLeftMoveBrightGrey {
+    0% {
+        transform: translate(1920px, 0px);
+    }
+    100% {
+        transform: translate(-1920px, 0px), scale(10);
+    }
+}
+
+@keyframes toLeftMoveBrightGrey {
+    0% {
+        transform: translate(1920px, 0px);
+    }
+    100% {
+        transform: translate(-1920px, 0px), scale(10);
+    }
+}
+
+.brightGreyCl {
+    fill: #BABABA;
+}
+
+.darkGreyCl {
+    fill: #787878;
+}
+
+.darkGrey {
+    fill: #787878;
+    transform: scale(1.2);
+    animation: toLeftMoveDarkGrey.4s cubic-bezier(0.7,0,0.9,1) forwards;
+    -webkit-animation: toLeftMoveDarkGrey .4s cubic-bezier(0.7,0,0.9,1) forwards;
+}
+
+@-webkit-keyframes toLeftMoveDarkGrey {
+    0% {
+        transform: translate(1920px, 0px);
+    }
+    100% {
+        transform: translate(-1920px, 0px), scale(10);
+    }
+}
+
+@keyframes toLeftMoveDarkGrey {
+    0% {
+        transform: translate(1920px, 0px);
+    }
+    100% {
+        transform: translate(-1920px, 0px), scale(10);
+    }
+}
+
+.details {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#github .octocat, #linkedin .linkedin-sign {
 	fill: #fff;
 }
 
@@ -106,10 +187,10 @@ figure a {
 }
 
 .email a {
-    font-family: MontserratRegular;
+    font-family: CourierNew;
     color: #1e151e;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
 }
 
@@ -145,7 +226,7 @@ figure a {
     animation: moving-panel-petal 1.1s infinite alternate; 
 }
 
-  .colortext .anim-shape-petal:nth-child(1) {
+  /*.colortext .anim-shape-petal:nth-child(1) {
     fill: #A80F67; }
   .colortext .anim-shape-petal:nth-child(2) {
     fill: #75448C; }
@@ -156,7 +237,7 @@ figure a {
   .colortext .anim-shape-petal:nth-child(5) {
     fill: #787878; }
   .colortext .anim-shape-petal:nth-child(6) {
-    fill: #DB81B5; }
+    fill: #DB81B5; }*/
 
 
 @-webkit-keyframes moving-panel-petal {
@@ -267,7 +348,26 @@ figure a {
 
     #footer-bg-xs {
         display: block;
+        overflow: hidden;
     }
+
+   /* @-webkit-keyframes toLeftMoveBG {
+    0% {
+        transform: translate(300px, 0px);
+    }
+    100% {
+        transform: translate(-300px, 0px), scale(3);
+    }
+}
+
+@keyframes toLeftMoveBG {
+    0% {
+        transform: translate(300px, 0px);
+    }
+    100% {
+        transform: translate(-300px, 0px), scale(3);
+    }
+}*/
 
     .social-footer .social .intro {
         font-size: 15px;

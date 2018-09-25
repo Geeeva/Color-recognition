@@ -20,10 +20,11 @@ class App extends Component {
             imageUrl: '',
             tooltipVisible: false,
             colorRecAppreance: false,
-            colors: [],
+            colors: ['#A80F67', '#75448C', '#571675', '#BABABA', '#787878', '#DB81B5'],
             footerBgColor: '#BABABA',
-            colorArray: ['#A80F67', '#75448C', '#571675', '#BABABA', '#787878', '#DB81B5'],
-            cCounter: 1
+            /*colorArray: ['#A80F67', '#75448C', '#571675', '#BABABA', '#787878', '#DB81B5'],*/
+            //cCounter: 1
+            petalRotation: false
         }
     }
 
@@ -33,7 +34,7 @@ class App extends Component {
         if(event.target.value === '') {
             this.setState({
                 colorRecAppreance: false,
-                tooltipVisible: false
+                tooltipVisible: false,
             })
         }
     }
@@ -47,8 +48,8 @@ class App extends Component {
        this.setState({
             colors: hexaColors,
             tooltipVisible: false,
-            colorRecAppreance: true
-
+            colorRecAppreance: true,
+            petalRotation: true
         });
     }
 
@@ -56,21 +57,26 @@ class App extends Component {
         if(this.state.input !== '') {
             this.setState({
                 imageUrl: this.state.input,
-                tooltipVisible: true,
-                colorRecAppreance: false
+                colorRecAppreance: false,
             });
         }
 
         app.models
         .predict(Clarifai.COLOR_MODEL, this.state.input)
-        .then(response => {console.log(response); this.displayColors(response)})
+        .then(response => this.displayColors(response))
         .catch(err => /*console.log(err)*/
-            this.setState({tooltipVisible: true})
+            this.setState({
+                tooltipVisible: true,
+
+
+            })
         );
+
+        this.setState({petalRotation: false});
     }
 
     footerBgHandler = () => {
-        /*if(this.state.footerBgColor === "#BABABA") {
+        if(this.state.footerBgColor === "#BABABA") {
             this.setState({
                footerBgColor: "#787878"
             })
@@ -78,30 +84,31 @@ class App extends Component {
             this.setState({
                footerBgColor: "#BABABA"
             })
-        }*/
-        if(this.state.cCounter < this.state.colorArray.length){
+        }
+        /*if(this.state.cCounter < this.state.colors.length){
             this.setState({
-               footerBgColor: this.state.colorArray[this.state.cCounter],
+               footerBgColor: this.state.colors[this.state.cCounter],
                cCounter: this.state.cCounter + 1
             });
+            console.log(this.state.colors[this.state.cCounter]);
         } else {
             this.setState({
                 cCounter: 1
             });
-        }
+        }*/
     }
 
     render() {
-        console.log("Display tooltip " + this.state.tooltipVisible);
         return (
             <div className="App">
                 <div className="container-fluid">
                     <div className="container input-section">
-                        <Logo />
+                        <Logo rotation={this.state.petalRotation}/>
                         <ImageLinkForm 
-                          changed={this.onInputChangeHandler}
-                          submitted={this.onSubmitHandler.bind(this)}
-                          tooltipVisible={this.state.tooltipVisible}
+                            changed={this.onInputChangeHandler}
+                            submitted={this.onSubmitHandler}
+                            colors={this.state.colors}
+                            tooltipVisible={this.state.tooltipVisible}
                         />
                         
                     </div>
@@ -115,6 +122,7 @@ class App extends Component {
                     </div>
                 </div>    
                 <Footer
+                    colors={this.state.colors}
                     footerBgColor={this.state.footerBgColor}
                     footerBgChanged={this.footerBgHandler} 
                 />

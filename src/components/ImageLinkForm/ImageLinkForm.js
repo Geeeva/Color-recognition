@@ -11,17 +11,17 @@ const imageLinkForm = (props) => {
 
                     <clipPath id="cp-text">
                         <text id="text" textAnchor="middle" x="50%" y="50%" dy=".35em">
-                             SMART COLOR RECOGNITION
+                             {"SMART COLOR RECOGNITION"}
                         </text>
                     </clipPath>
 
                     <g clipPath="url(#cp-text)" className="colortext">
-                        <rect width="100%" height="100%" className="anim-shape"></rect>
-                        <rect width="80%" height="100%" className="anim-shape"></rect>
-                        <rect width="60%" height="100%" className="anim-shape"></rect>
-                        <rect width="40%" height="100%" className="anim-shape"></rect>
-                        <rect width="20%" height="100%" className="anim-shape"></rect>
-                        <rect width="10%" height="100%" className="anim-shape"></rect>
+                        <rect width="100%" height="100%" fill={props.colors[0]} className="anim-shape"></rect>
+                        <rect width="80%" height="100%" fill={props.colors[1]} className="anim-shape"></rect>
+                        <rect width="60%" height="100%" fill={props.colors[2]} className="anim-shape"></rect>
+                        <rect width="40%" height="100%" fill={props.colors[3]} className="anim-shape"></rect>
+                        <rect width="20%" height="100%" fill={props.colors[4]} className="anim-shape"></rect>
+                        <rect width="10%" height="100%" fill={props.colors[5]} className="anim-shape"></rect>
                     </g>
                 </svg>
 			</h1>

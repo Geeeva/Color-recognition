@@ -7,6 +7,36 @@
 	overflow: hidden;
 }
 
+.logo-rotation {
+	-webkit-animation: petalRotation .7s linear forwards, petalScaling .6s linar forwards; /* Safari 4.0 - 8.0 */
+    animation: petalRotation .7s linear forwards, petalScaling .6s ease-in-out forwards;
+}
+
+@-webkit-keyframes petalRotation {
+    0%   {transform: rotate(90deg), scale(0.8);}
+    100% {transform: rotate(720deg);}
+}
+
+/* Standard syntax */
+@keyframes petalRotation {
+    0%   {transform: rotate(90deg), scale(0.8);}
+    100% {transform: rotate(720deg);}
+}
+
+/*@-webkit-keyframes petalScaling {
+    0%   {transform: scale(1);}
+    50%  {transform: scale(0.8);}
+    100% {transform: scale(1);}
+}
+
+/* Standard syntax */
+/*@keyframes petalScaling {
+   	0%   {transform: scale(1);}
+    50%  {transform: scale(0.8);}
+    100% {transform: scale(1);}
+}*/
+
+
 
 /*** Start of medium tablet styles ***/
 @media screen and (max-width: 768px) {
@@ -27,6 +57,7 @@
 
 	#Logo-wrapper {
 		top: 20px;
+		margin-left: 5px;
 		margin-bottom: 20px;
 		height: 160px;
 		width: 160px;

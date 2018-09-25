@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {TimelineMax} from "gsap/TweenMax";
-import {Elastic} from "gsap/all";
 import './Colors.css';
 
 class Colors extends Component {
@@ -11,14 +9,6 @@ class Colors extends Component {
             topOffset: 18
         }
     }
-
-    componentDidMount(){
-    	let animation = new TimelineMax(), colorsNodes;
-		colorsNodes = document.querySelectorAll('.color');
-		const colors = Array.from(colorsNodes);
-		animation.staggerFrom(colors, 2, {
-			scale: 0.7, ease: Elastic.easeOut}, 0.15);
-	}	
 
 	render(){
 		if(!this.props.colors.length){
